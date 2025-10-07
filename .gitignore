@@ -210,3 +210,4 @@ data
 .idea
 logs_img
 output
+processed_images
