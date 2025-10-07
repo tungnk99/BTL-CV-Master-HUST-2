@@ -1,0 +1,42 @@
+# Main configuration for Bag of Words pipeline
+
+GENERAL:
+  train_ratio: 0.8
+  random_state: 42
+  target_size: null
+  save_dir: output
+
+PIPELINE:
+  feature_extractor:
+    method: sift
+    params:
+      nfeatures: 0
+      nOctaveLayers: 3
+      contrastThreshold: 0.04
+      edgeThreshold: 10
+      sigma: 1.6
+  
+  vocabulary:
+    method: kmeans
+    size: 1000
+    params:
+      n_clusters: 1000
+      random_state: 42
+      max_iter: 300
+      n_init: 10
+      algorithm: lloyd
+  
+  vectorizer:
+    method: count
+    params:
+      normalize: true
+  
+  classifier:
+    method: svm
+    params:
+      C: 1.0
+      kernel: rbf
+      gamma: scale
+      degree: 3
+      probability: false
+      random_state: 42
