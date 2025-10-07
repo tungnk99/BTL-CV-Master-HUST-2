@@ -10,12 +10,12 @@
 
 2. Điều chỉnh tham số
 
-| Tham số           | Mặc định               | Giải thích                             | Ảnh hưởng với CIFAR                                                                      |
-| ----------------- | ---------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **nfeatures**     | 500                    | Số lượng feature tối đa muốn detect    | Có thể tăng lên để cố gắng lấy thêm điểm                                                 |
-| **scaleFactor**   | 1.2                    | Hệ số scale giữa các pyramid levels    | Nếu ảnh nhỏ, nên giảm xuống (1.05–1.1) để có nhiều level chi tiết hơn                    |
-| **nlevels**       | 8                      | Số tầng pyramid scale                  | Ảnh 32×32 mà 8 tầng thì tầng cuối gần như 0 pixel 😅 → nên giảm còn 3–4                  |
+| Tham số           | Mặc định               | Giải thích                             | Ảnh hưởng với CIFAR                                                                    |
+| ----------------- | ---------------------- | -------------------------------------- | -------------------------------------------------------------------------------------- |
+| **nfeatures**     | 500                    | Số lượng feature tối đa muốn detect    | Có thể tăng lên để cố gắng lấy thêm điểm                                               |
+| **scaleFactor**   | 1.2                    | Hệ số scale giữa các pyramid levels    | Nếu ảnh nhỏ, nên giảm xuống (1.05–1.1) để có nhiều level chi tiết hơn                  |
+| **nlevels**       | 8                      | Số tầng pyramid scale                  | Ảnh 32×32 mà 8 tầng thì tầng cuối gần như 0 pixel → nên giảm còn 3–4                 |
 | **edgeThreshold** | 31                     | Kích thước vùng bỏ qua biên khi detect | Rất lớn so với ảnh nhỏ, nghĩa là gần như bỏ hết vùng có thể detect → nên giảm mạnh (3–5) |
-| **patchSize**     | 31                     | Kích thước patch mô tả                 | Ảnh 32×32 mà patch 31 thì chỉ còn 1 pixel biên 😬 → nên giảm còn 15 hoặc 9               |
-| **fastThreshold** | 20                     | Ngưỡng FAST (độ nhạy corner)           | Giảm xuống (5–10) để phát hiện nhiều điểm hơn trong ảnh mờ                               |
-| **scoreType**     | `cv2.ORB_HARRIS_SCORE` | Dùng Harris để chọn góc (ổn)           | Giữ nguyên cũng được                                                                     |
+| **patchSize**     | 31                     | Kích thước patch mô tả                 | Ảnh 32×32 mà patch 31 thì chỉ còn 1 pixel biên → nên giảm còn 15 hoặc 9              |
+| **fastThreshold** | 20                     | Ngưỡng FAST (độ nhạy corner)           | Giảm xuống (5–10) để phát hiện nhiều điểm hơn trong ảnh mờ                             |
+| **scoreType**     | `cv2.ORB_HARRIS_SCORE` | Dùng Harris để chọn góc (ổn)           | Giữ nguyên cũng được                                                                   |
